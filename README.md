@@ -1,29 +1,19 @@
 # Javascript
 
-## Lesson 1
+## Lesson 2
 
-Commands:
+### Operators
 
-- alert()
+- - sumarry
+- -
+- -
+- /
+- % mod
 
-```js
-<script>alert('salam')</script>
-```
+### Priorties الویتها
 
-String :: Text
+- ()
+- \+ , /
+- \- , -
 
-- console.log()
-
-```js
-console.log("salam");
-```
-
-Syntax: نحوه نوشتن
-
-SyntaxError : خطا در نحوه نوشتن
-
-- document.write()
-
-```js
-doucment.write("salam");
-```
+### Variables متغیرها
