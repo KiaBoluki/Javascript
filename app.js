@@ -15,12 +15,29 @@
 // => console.log ( tedad * mablagh );
 
 
-const tedad = 4
 
-const mablagh = 75000
 
 // console.log(tedad * mablagh)
 
 const btnMohasebe = document.querySelector("#btn");
 
-btnMohasebe.addEventListener('click', () => document.write('Ghorbanat'))
+const inputTedadElement = document.querySelector('#tedad');
+
+const inputMablaghElement = document.querySelector('#mablagh');
+
+// console.log(inputTedadElement.value)
+
+// btnMohasebe.addEventListener('click', () => console.log())
+
+// const tedad = inputTedadElement.value
+// const mablagh = inputMablaghElement.value
+
+const javabEl = document.querySelector('#javab');
+
+
+btnMohasebe.addEventListener('click', () => javabEl.innerHTML= 
+     inputTedadElement.value * inputMablaghElement.value
+     )
+
+
+
