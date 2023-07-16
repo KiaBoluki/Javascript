@@ -1,0 +1,32 @@
+div#container{
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    border-radius: 2px;
+}
+
+div#btns{
+    margin-top: 1rem;
+}
+
+div#images{
+    margin-top: 1rem;
+}
+
+div#images img{
+    cursor: pointer;
+    
+}
+
+div#images img#img-01{
+    display: block;
+    
+}
+div#images img#img-02{
+    display: none;
+    
+}
+div#images img#img-03{
+    display: none;
+    
+}
