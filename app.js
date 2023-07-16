@@ -1,43 +1,7 @@
-// console.log( 5 + 8)
-// console.log( 5 * 8)
-// console.log( 5 / 8)
-// console.log( 8 % 5)
-// console.log( 9 % 5)
-// console.log( 10 % 5)
-// console.log( 11 % 5)
-// console.log( 12 % 5)
-// console.log( 13 % 5)
+const adad1 = '5'
 
-// console.log( 2 * 75000 + 1 * 15000 )
-
-// console.log( ( 2 + 8 ) * 2 / 5)
-
-// => console.log ( tedad * mablagh );
+const adad2 = '6'
 
 
 
-
-// console.log(tedad * mablagh)
-
-const btnMohasebe = document.querySelector("#btn");
-
-const inputTedadElement = document.querySelector('#tedad');
-
-const inputMablaghElement = document.querySelector('#mablagh');
-
-// console.log(inputTedadElement.value)
-
-// btnMohasebe.addEventListener('click', () => console.log())
-
-// const tedad = inputTedadElement.value
-// const mablagh = inputMablaghElement.value
-
-const javabEl = document.querySelector('#javab');
-
-
-btnMohasebe.addEventListener('click', () => javabEl.innerHTML= 
-     inputTedadElement.value * inputMablaghElement.value
-     )
-
-
-
+console.log( parseInt(adad1) + parseInt(adad2))
