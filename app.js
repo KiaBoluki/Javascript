@@ -1,13 +1,40 @@
-const btnDark = document.querySelector("#btn-dark");
-const btnYellow = document.querySelector("#btn-yellow");
+const nomreEl = document.querySelector('#nomre')
 
-var modeName = 'Dark'; // متغیر // variable
+const result = document.querySelector('#result')
 
-btnDark.addEventListener('click', () => document.body.classList.toggle('dark'))
-btnDark.addEventListener('click', () => modeName = 'Light' )
-btnDark.addEventListener('click', () => modeName = 'Dark' )
-btnDark.addEventListener('click', () => btnDark.innerHTML = modeName + " Mode")
+const btnEl = document.querySelector('#btn')
 
 
-btnDark.innerHTML = modeName + " Mode";
+btnEl.addEventListener('click', () => {
+    const grade = nomreEl.value 
+    if ( grade > 15 ){
+        result.innerHTML = "GREATE !!! YOU PASSED ."
+    }
+
+    if ( grade < 15 ){
+        result.innerHTML = "NOT BAD "
+    }
+
+    if ( grade < 10 ){
+        result.innerHTML = "YOU REFUSED . IDIOT "
+    }
+})
+
+
+const btnChangeModeEl = document.querySelector("#change"); 
+
+
+btnChangeModeEl.addEventListener( 'click' , () => {
+    
+    if ( btnChangeModeEl.innerHTML == "Dark Mode"){
+        btnChangeModeEl.innerHTML = "Light Mode"
+
+        document.body.classList.add('dark')
+    }else {
+        btnChangeModeEl.innerHTML = "Dark Mode"
+        document.body.classList.remove('dark')
+
+    }
+
+})
 
