@@ -7,16 +7,30 @@ const btnEl = document.querySelector('#btn')
 
 btnEl.addEventListener('click', () => {
     const grade = nomreEl.value 
-    if ( grade > 15 ){
-        result.innerHTML = "GREATE !!! YOU PASSED ."
+
+    if ( grade > 20 )
+    {
+
+        result.innerHTML = "The Number you entered is not valid."
+
+    }
+    
+    else if( grade > 15 ){
+        result.innerHTML = "Greate You are a genius!"
     }
 
-    if ( grade < 15 ){
-        result.innerHTML = "NOT BAD "
+    else if ( grade > 10 ){
+        result.innerHTML = "Hey Not bad !"
     }
 
-    if ( grade < 10 ){
-        result.innerHTML = "YOU REFUSED . IDIOT "
+    else if ( grade < 0 ) {
+
+        result.innerHTML = "The Number you entered is not valid."
+
+    }
+
+    else {
+        result.innerHTML = "You couldn't pass the test. I am so sorry. you should go to the hell."
     }
 })
 
