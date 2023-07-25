@@ -8,14 +8,17 @@ const btnEl = document.querySelector('#btn')
 btnEl.addEventListener('click', () => {
     const grade = nomreEl.value 
 
-    if ( grade > 20 )
+    if ( grade > 20 ) // [ 21, 22 , 23 , 24 , ... , inifite ]
     {
 
         result.innerHTML = "The Number you entered is not valid."
 
     }
     
-    else if( grade > 15 ){
+    else if( grade > 15 ){ // [ 20, 19 , 18 , 17 , ... , - infinite] 
+
+        // [ 16, 17, 18 , 19 , 20 ]
+
         result.innerHTML = "Greate You are a genius!"
     }
 
@@ -32,6 +35,8 @@ btnEl.addEventListener('click', () => {
     else {
         result.innerHTML = "You couldn't pass the test. I am so sorry. you should go to the hell."
     }
+
+
 })
 
 
