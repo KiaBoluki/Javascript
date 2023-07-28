@@ -7,21 +7,40 @@
     <title>JS 07</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Karnameh</h1>
-
-    <label for="nomre">
-        نمره ریاضی خود را وارد کنید
-        <input type="number" id="nomre" >
+    <label for="jensiat-mard">
+        Mard
+        <input type="radio" name="jensiat" id="jensiat-mard" value="mard">
     </label>
 
-    <button id="btn">Check</button>
+    <label for="jensiat-zan">
+        Zan
+        <input type="radio" name="jensiat" id="jensiat-zan" value="zan">
+    </label>
 
-    <p id="result"></p>
+    <br>
+    <input type="number" min="10" max="80" name="age" id="age">
+    <br>
+    <br>
 
-
-    <button id="change">Dark Mode</button>
+    <br>
+    <label for="payane-khedmat">
+        
+        <input type="radio" id="payane-khedmat" name="khedmat" value="payan">
+        پایان خدمت دارم
+    </label>
+    <br>
+    <label for="moafiat">
+        
+        <input type="radio" id="moafiat" name="khedmat" value="moaf">
+        کارت معاف از خدمت دارم 
+    </label>
+    <br><br>
+    <button id="btnSubmit">Submit</button>
+    <br><br>
+    <h1 id="result"></h1>
 
     <script src="./app.js"></script>
 </body>

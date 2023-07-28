@@ -1,59 +1,38 @@
-const nomreEl = document.querySelector('#nomre')
+// const x = 85 ;
+// const y = '85';
 
-const result = document.querySelector('#result')
+// if ( x != y ){ // true
+//     console.log('do addad barabar hastand')
+// }
+// else {
+//     console.log ( 'do addad na mosavi hastand');
+// }
 
-const btnEl = document.querySelector('#btn')
+const jMardEl = document.querySelector("#jensiat-mard");
+const jZanEl = document.querySelector("#jensiat-zan");
 
+const ageEl = document.querySelector("#age");
 
-btnEl.addEventListener('click', () => {
-    const grade = nomreEl.value 
+const btnSubmitEl = document.querySelector("#btnSubmit");
 
-    if ( grade > 20 ) // [ 21, 22 , 23 , 24 , ... , inifite ]
-    {
+const resultEl = document.querySelector("#result");
 
-        result.innerHTML = "The Number you entered is not valid."
+const payanEl = document.querySelector('#payane-khedmat'); 
+const moafEl = document.querySelector('#moafiat');
 
-    }
+btnSubmitEl.addEventListener("click", () => {
+
+  if (jMardEl.checked && ageEl.value > 18) {
     
-    else if( grade > 15 ){ // [ 20, 19 , 18 , 17 , ... , - infinite] 
-
-        // [ 16, 17, 18 , 19 , 20 ]
-
-        result.innerHTML = "Greate You are a genius!"
+    if ( payanEl.checked || moafEl.checked ){
+        console.log('shoma mojaz hastid')
     }
-
-    else if ( grade > 10 ){
-        result.innerHTML = "Hey Not bad !"
-    }
-
-    else if ( grade < 0 ) {
-
-        result.innerHTML = "The Number you entered is not valid."
-
-    }
-
     else {
-        result.innerHTML = "You couldn't pass the test. I am so sorry. you should go to the hell."
+        console.log('motasefane shoma nemitavanid edame bedahid. ')
     }
 
-
-})
-
-
-const btnChangeModeEl = document.querySelector("#change"); 
-
-
-btnChangeModeEl.addEventListener( 'click' , () => {
-    
-    if ( btnChangeModeEl.innerHTML == "Dark Mode"){
-        btnChangeModeEl.innerHTML = "Light Mode"
-
-        document.body.classList.add('dark')
-    }else {
-        btnChangeModeEl.innerHTML = "Dark Mode"
-        document.body.classList.remove('dark')
-
-    }
-
-})
-
+  }
+  else {
+    console.log('shoma niazi be taeede payane khedmat nadarid.')
+  }
+});
