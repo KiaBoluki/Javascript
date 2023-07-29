@@ -1,38 +1,35 @@
-// const x = 85 ;
-// const y = '85';
 
-// if ( x != y ){ // true
-//     console.log('do addad barabar hastand')
-// }
-// else {
-//     console.log ( 'do addad na mosavi hastand');
-// }
+const yearEl = document.getElementById('year');
+const btnSubmitEl = document.getElementById('btnSubmit');
+const resultEl = document.getElementById('result'); 
 
-const jMardEl = document.querySelector("#jensiat-mard");
-const jZanEl = document.querySelector("#jensiat-zan");
+btnSubmitEl.addEventListener('click', () => {
+  const yearNumber = yearEl.value; 
 
-const ageEl = document.querySelector("#age");
+  if ( yearNumber < 1000 || yearNumber > 3000 ){
+    resultEl.innerHTML = 'Adade vared shode bayad beyn e 1000-3000 bashad.'
+  }
 
-const btnSubmitEl = document.querySelector("#btnSubmit");
+  else{
 
-const resultEl = document.querySelector("#result");
+    const dividedByFour = yearNumber % 4 ; 
+    const dividedByHundred = yearNumber % 100 ;
 
-const payanEl = document.querySelector('#payane-khedmat'); 
-const moafEl = document.querySelector('#moafiat');
+    if ( dividedByFour == 0 && dividedByHundred != 0 ){
+      resultEl.innerHTML = "Sal e morede nazar kabise ast.";
+      resultEl.style.backgroundColor = "#a9ff81" ;
+      resultEl.style.border = "1px solid #226602" ;
+      resultEl.style.color = "#226602" ;
+      resultEl.style.padding = "1rem 2rem" ;
 
-btnSubmitEl.addEventListener("click", () => {
-
-  if (jMardEl.checked && ageEl.value > 18) {
-    
-    if ( payanEl.checked || moafEl.checked ){
-        console.log('shoma mojaz hastid')
     }
-    else {
-        console.log('motasefane shoma nemitavanid edame bedahid. ')
+    else{
+      resultEl.innerHTML = "Sal e morede nazar kabise NIST.";
+      resultEl.style.backgroundColor = "#ff9595" ;
+      resultEl.style.border = "1px solid #5a0000" ;
+      resultEl.style.color = "#5a0000" ;
+      resultEl.style.padding = "1rem 2rem" ;
     }
 
   }
-  else {
-    console.log('shoma niazi be taeede payane khedmat nadarid.')
-  }
-});
+})
