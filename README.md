@@ -2,13 +2,10 @@
 
 ## Lesson 07
 
-### حل تمرین سال کبیسه
+### اضافه کردن یا کم کردن 
 
-Write a JavaScript program that checks if a given year is a leap year or not. 
+ما میتوانیم در برنامه نویسی مقدار متغیر را به میزان دلخواه یا مورد لزوم تغییر بدهیم. 
 
-A leap year is a year that is divisible by 4, except for years that are divisible by 100. However, years that are divisible by 400 are also considered leap years.
-
-
-1980 % 4 = 0;
-
-1980 % 100 != 0;
+مثلا یک متغیر داریم به نام 
+a
+و میتوانیم مقدار آن را اضافه یا کم کنیم. 

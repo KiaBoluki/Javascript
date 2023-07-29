@@ -1,35 +1,52 @@
 
-const yearEl = document.getElementById('year');
-const btnSubmitEl = document.getElementById('btnSubmit');
+const btnIncrement = document.getElementById('btnIncrement');
+const btnIncrement5 = document.getElementById('btnIncrement5');
+const btnIncrementTimes5 = document.getElementById('btnIncrementTimes5');
+const btnExponential = document.getElementById('btnExponential');
+
+
+const btnDecrement = document.getElementById('btnDecrement');
+const btnDecrement5 = document.getElementById('btnDecrement5');
+const btnDecrementDivide5 = document.getElementById('btnDecrementDivide5');
+
 const resultEl = document.getElementById('result'); 
 
-btnSubmitEl.addEventListener('click', () => {
-  const yearNumber = yearEl.value; 
 
-  if ( yearNumber < 1000 || yearNumber > 3000 ){
-    resultEl.innerHTML = 'Adade vared shode bayad beyn e 1000-3000 bashad.'
-  }
+var number = 1 ; 
 
-  else{
+resultEl.innerHTML = number; 
 
-    const dividedByFour = yearNumber % 4 ; 
-    const dividedByHundred = yearNumber % 100 ;
+btnIncrement.addEventListener('click' , () => {
+  number ++; 
+  resultEl.innerHTML = number; 
+})
 
-    if ( dividedByFour == 0 && dividedByHundred != 0 ){
-      resultEl.innerHTML = "Sal e morede nazar kabise ast.";
-      resultEl.style.backgroundColor = "#a9ff81" ;
-      resultEl.style.border = "1px solid #226602" ;
-      resultEl.style.color = "#226602" ;
-      resultEl.style.padding = "1rem 2rem" ;
+btnDecrement.addEventListener('click', ()=>{
+  number --;
+  resultEl.innerHTML = number; 
+})
+btnIncrement5.addEventListener('click' , () => {
+  number = number + 5; 
+  resultEl.innerHTML = number; 
+})
 
-    }
-    else{
-      resultEl.innerHTML = "Sal e morede nazar kabise NIST.";
-      resultEl.style.backgroundColor = "#ff9595" ;
-      resultEl.style.border = "1px solid #5a0000" ;
-      resultEl.style.color = "#5a0000" ;
-      resultEl.style.padding = "1rem 2rem" ;
-    }
+btnDecrement5.addEventListener('click', ()=>{
+  number = number - 5; 
+  resultEl.innerHTML = number; 
+})
 
-  }
+btnIncrementTimes5.addEventListener('click', ()=>{
+  number = number * 5 ; 
+  resultEl.innerHTML = number; 
+})
+
+
+btnDecrementDivide5.addEventListener('click' , () => {
+  number = number / 5 ; 
+  resultEl.innerHTML = number; 
+})
+
+btnExponential.addEventListener( 'click' , () => {
+  number = number ** 3; 
+  resultEl.innerHTML = number; 
 })
