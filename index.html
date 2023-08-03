@@ -9,16 +9,33 @@
 </head>
 
 <body>
-    <button id="btnIncrement">+</button>
-    <button id="btnIncrement5">+5</button>
-    <button id="btnIncrementTimes5">*5</button>
-    <button id="btnExponential">**</button>
 
-    <button id="btnDecrement">-</button>
-    <button id="btnDecrement5">-5</button>
-    <button id="btnDecrementDivide5">/5</button>
-    <br><br>
-    <h1 id="result"></h1>
+    <div class="calculator">
+
+        <h1 id="screen"></h1>
+
+        <div class="btn-wrapper">
+            <div class="number-pad">
+
+                <button id="btnOne" value="1">1</button>
+                <button id="btnTwo" value="2">2</button>
+                <button id="btnThree" value="3">3</button>
+                <button id="btnFour" value="4">4</button>
+                <button id="btnFive" value="5">5</button>
+                <button id="btnSix" value="6">6</button>
+                <button id="btnSeven" value="7">7</button>
+                <button id="btnEight" value="8">8</button>
+                <button id="btnNine" value="9">9</button>
+                <button id="btnZero" value="0">0</button>
+                
+            </div>
+            <div class="operators-wrapper">
+
+                <button id="btnSum" value="+">+</button>
+                <button id="btnEqual" value="=">=</button>
+            </div>
+        </div>
+    </div>
 
     <script src="./app.js"></script>
 </body>
