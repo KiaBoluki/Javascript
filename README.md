@@ -27,7 +27,9 @@ const addadeAvval = ResultEl.innerHTML; // Global Scope ;
 
     const number = 5; 
 
-    const addadeAvvale = ResultEl.innerHTML ; 
+    var addadDovvom = 89; 
+    // const addadeAvvale = ResultEl.innerHTML ; 
+    console.log(addadeAvval);
 
     ResultEl.innerHTML = ""; 
 }
@@ -36,7 +38,7 @@ const addadeAvval = ResultEl.innerHTML; // Global Scope ;
     // scope خصوصی و فقط به کدهای داخل بلاک دسترسی دارد
     const number = 5; 
     console.log ( number ) ; // Error : من نامبر نمیشناسم.
-
+    console.log( addadeDovvom)
     console.log( addadeAvval ); // kar mikone
 }
 
@@ -46,3 +48,22 @@ const addadeAvval = ResultEl.innerHTML; // Global Scope ;
 
 
 ```
+
+## حالت اول 
+
+تمام متغیرها و ثابت هایی که ما در قسمت اصلی کد مینویسیم یا به عبارت دیگر در قسمت 
+Global Scope 
+
+## حالت دوم 
+
+تعریف متغیر با کلمه کلیدی 
+var
+
+که باعث میشود این متغیر به صورت گلوبال تعریف بشود و همه بلاک ها ( اسکوپ ها ) به آن دسترسی داشته باشند.
+
+## حالت سوم 
+
+تعریف متغیر با استفاده از کلمه کلیدی 
+let 
+
+که باعث میشود متغیر فقط در داخل اسکوپ خودش معنی داشته باشد. 
