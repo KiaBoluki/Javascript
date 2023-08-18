@@ -1,16 +1,24 @@
-let a = 0; 
-let b = 0; 
-let c = 0; 
+function getFullname( firstName , lastName )
+{
+    const fullName = firstName + ' ' + lastName;
+    
+    return fullName ;
+}
 
+function getYears ( birthYear )
+{
 
-a += 1 ; 
-b++;
-c += 55; // c = c + 55 ; 
+    const thisYear = 1402;
 
-c -= 5; // c = c - 5 ; 
-c *= 2; // c = c * 2 ; 
+    const ageYears = thisYear - birthYear ; // 2 
 
-// logs
-console.log('a:', a ); 
-console.log('b:', b);
-console.log('c:', c);
+    return " " + ageYears; 
+}
+
+function greetings(){
+
+    const greetings =  "<h1>" + getFullname('Radin', 'Mashoufi') + ". Shoma " + getYears(1387) + " Saal darid." + "</h1>"
+    document.body.innerHTML =  greetings; 
+}
+
+greetings()
