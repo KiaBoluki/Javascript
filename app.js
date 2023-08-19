@@ -1,24 +1,14 @@
-function getFullname( firstName , lastName )
-{
-    const fullName = firstName + ' ' + lastName;
-    
-    return fullName ;
-}
+// alert('salam')
 
-function getYears ( birthYear )
-{
+// console.log('salam')
 
-    const thisYear = 1402;
+// document.write('salam')
 
-    const ageYears = thisYear - birthYear ; // 2 
+let x = Math.random()
 
-    return " " + ageYears; 
-}
+let number = parseInt ( x * 100 ) 
 
-function greetings(){
+let heading = `<h1>${number}</h1>`
 
-    const greetings =  "<h1>" + getFullname('Radin', 'Mashoufi') + ". Shoma " + getYears(1387) + " Saal darid." + "</h1>"
-    document.body.innerHTML =  greetings; 
-}
+document.body.innerHTML = heading; 
 
-greetings()
