@@ -1,14 +1,45 @@
-// alert('salam')
+const containerEl = document.getElementById('container')
+const countEl = document.getElementById('count')
+const btnRefresh = document.getElementById('btnRefresh')
 
-// console.log('salam')
+const randomNumber = parseInt( Math.random() * 500 )
+countEl.innerHTML = randomNumber;
 
-// document.write('salam')
+btnRefresh.addEventListener('click', () => {
+    createCircles()
+})
 
-let x = Math.random()
 
-let number = parseInt ( x * 100 ) 
+function createRandomColor(){
+        // define 3 random numbers
+        let red = Math.random() * 255 ;
+        let green = Math.random() * 255 ; 
+        let blue = Math.random() * 255 ;
+    
+        // convert to integer 
+        red = parseInt(red); 
+        green = parseInt(green)
+        blue = parseInt(blue)
+    
+        const bgColor = `rgb( ${red}, ${green}, ${blue} )`;
+        return bgColor; 
+}
 
-let heading = `<h1>${number}</h1>`
+function createCircles (){
+    containerEl.innerHTML = ""; 
 
-document.body.innerHTML = heading; 
+    for ( let x = 1 ; x < randomNumber ; x ++ ){
+        // create a dom object 
+        const box = document.createElement('div')
+        box.style.backgroundColor = createRandomColor();
+        box.classList.add('colorful-box')
+        
+        const animationDely = parseInt ( Math.random() * 1000 )
+        box.style.animationDelay = `${animationDely}ms`;
 
+    
+        // append to document
+        containerEl.appendChild(box)
+    }
+    
+}

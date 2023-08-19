@@ -6,9 +6,43 @@
 
 body{
     min-height: 100vh;
+
 }
 
+.colorful-box{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);    
+    animation: rotate 2s ease-in-out  infinite  ;
+}
 
 img{
     max-width: 200px;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: .5rem;
+    perspective: 10000px;
+}
+
+#count-container {
+    text-align: center;
+    padding: 1rem ;
+    border: 1px solid rgba(0,0,0,0.25);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+@keyframes rotate{
+    from {
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(359deg);
+    }
 }
