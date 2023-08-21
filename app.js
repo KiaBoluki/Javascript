@@ -6,7 +6,7 @@ const randomNumber = parseInt( Math.random() * 500 )
 countEl.innerHTML = randomNumber;
 
 btnRefresh.addEventListener('click', () => {
-    createCircles()
+    generateSquares()
 })
 
 
@@ -42,4 +42,20 @@ function createCircles (){
         containerEl.appendChild(box)
     }
     
+}
+
+function generateSquares(){
+
+
+    let i = 0 ; 
+
+    console.log('loop started')
+
+    while ( i <= 50 )
+    {
+        console.log(i)
+        i = i + 3.25 ; 
+    }
+
+    console.log('loop ended.')
 }
