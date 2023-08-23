@@ -1,61 +1,50 @@
-const containerEl = document.getElementById('container')
-const countEl = document.getElementById('count')
-const btnRefresh = document.getElementById('btnRefresh')
+const gameEl = document.getElementById('game');
+const fighterEl = document.getElementById('fighter')
 
-const randomNumber = parseInt( Math.random() * 500 )
-countEl.innerHTML = randomNumber;
-
-btnRefresh.addEventListener('click', () => {
-    generateSquares()
-})
+window.addEventListener('keydown', goLeft);
+const speed = 15;
+let leftOffset = 0;
 
 
-function createRandomColor(){
-        // define 3 random numbers
-        let red = Math.random() * 255 ;
-        let green = Math.random() * 255 ; 
-        let blue = Math.random() * 255 ;
-    
-        // convert to integer 
-        red = parseInt(red); 
-        green = parseInt(green)
-        blue = parseInt(blue)
-    
-        const bgColor = `rgb( ${red}, ${green}, ${blue} )`;
-        return bgColor; 
-}
+function goLeft(event) {
 
-function createCircles (){
-    containerEl.innerHTML = ""; 
+    // مقدار فاصله سمت چپ المان از بادی رو نشون میده
+    let fighterElementLeft = parseInt(fighterEl.getBoundingClientRect().left);
+    let gameElementLeft = parseInt(gameEl.getBoundingClientRect().left);
+    // مقدار فاصله سمت راست المان از بادی رو نشون میده
+    let fighterElementRight = parseInt(fighterEl.getBoundingClientRect().right);
+    let gameElementRight = parseInt(gameEl.getBoundingClientRect().right);
 
-    for ( let x = 1 ; x < randomNumber ; x ++ ){
-        // create a dom object 
-        const box = document.createElement('div')
-        box.style.backgroundColor = createRandomColor();
-        box.classList.add('colorful-box')
-        
-        const animationDely = parseInt ( Math.random() * 1000 )
-        box.style.animationDelay = `${animationDely}ms`;
+    switch (event.key) {
+        case 'ArrowLeft':
+            if ( fighterElementLeft > gameElementLeft + speed )
+            {
+                leftOffset -= speed;
+            }
+            else{
+                fighterEl.style.left = 0 ;
+            }
+            break;
+        case 'ArrowRight':  // 680 - 15 = 665 
+            if ( fighterElementRight < gameElementRight )
+            {
+                leftOffset += speed;
+            }
+            else{
+                fighterEl.style.transform = `${gameElementRight}px` ;
+            }
+            break;
 
-    
-        // append to document
-        containerEl.appendChild(box)
+        case 'ArrowDown': 
+            const bulletEl = document.createElement( 'div' )
+            bulletEl.classList.add('bullet');
+            fighterEl.appendChild(bulletEl); 
+
+        default:
+            console.log(event.key)
+
     }
-    
-}
-
-function generateSquares(){
-
-
-    let i = 0 ; 
-
-    console.log('loop started')
-
-    while ( i <= 50 )
-    {
-        console.log(i)
-        i = i + 3.25 ; 
-    }
-
-    console.log('loop ended.')
+    console.log('fighter left: ' ,fighterElementLeft, 'game left:' , gameElementLeft );
+    console.log('fighter right: ' ,fighterElementRight, 'game right:' , gameElementRight );
+    fighterEl.style.left = `${leftOffset}px`;
 }
