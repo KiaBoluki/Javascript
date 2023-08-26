@@ -48,3 +48,37 @@ function goLeft(event) {
     console.log('fighter right: ' ,fighterElementRight, 'game right:' , gameElementRight );
     fighterEl.style.left = `${leftOffset}px`;
 }
+
+
+const imageContainerEl = document.getElementById('image-container');
+const countEl = document.getElementById('count');
+
+countEl.addEventListener( 'change' , (event)=>generateImage(event))
+
+
+function generateImage(event ){
+
+    const count = event.target.value; 
+    if ( count > 10 )
+    {
+        count = 10 ; 
+    }
+    if ( count < 1 ){
+        count = 1;
+    }
+
+    imageContainerEl.innerHTML = ""; 
+
+    for (let index = 1; index <= count; index++) {
+        // const width = parseInt( Math.random() * 4 ) * 100 + 100  ; 
+        // const height = parseInt( Math.random() * 4 ) * 100 + 100  ; 
+
+        const width = 100; const height = 100 ; 
+        console.log(width);
+        const newImageEl = document.createElement('img');
+        newImageEl.src = `https://picsum.photos/seed/${index}/${width}/${height}`;
+        newImageEl.loading = 'eager';
+        imageContainerEl.appendChild(newImageEl);
+    }
+}
+

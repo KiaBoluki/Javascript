@@ -12,6 +12,7 @@
     margin-top: 32px;
     padding: 32px;
     position: relative;
+    background-color: pink;
 }
 
 
@@ -52,4 +53,19 @@
         display: block;
         transform: translateY(300px);
     }
+}
+
+img{
+    /* width: 200px ;
+    height: 200px;
+    border: 2px solid gray; 
+    object-fit: cover; */
+}
+
+#image-container {
+    width: 80%;
+    margin-inline: auto; 
+    padding: 1rem;
+    border: 1px solid pink; 
+    min-height: 80vh;
 }
