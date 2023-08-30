@@ -1,23 +1,33 @@
+const titleEl = document.getElementById('title')
+const sizeEl = document.getElementById('size')
+const colorEl = document.getElementById('color')
+const priceEl = document.getElementById('price')
+const btnAddEl = document.getElementById('btn-add-to-cart')
+const cartEl = document.querySelector('#cart ul')
 
+const products = []; 
 
-const containerEl = document.getElementById('container'); 
+btnAddEl.addEventListener('click', addToCard)
 
-function showTime(){
-const date = new Date(); 
-    containerEl.innerText = 
-    `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`; 
-}
+function addToCard(){
+    const newProduct = []; 
+    const titleValue = titleEl.value; 
+    const sizeValue = sizeEl.value; 
+    const colorValue = colorEl.value; 
+    const priceValue = priceEl.value; 
 
-
-setInterval(showTime, 1000)
-setInterval(changeBackgroundColor, 1000)
-
-function changeBackgroundColor(){
-    const red = parseInt ( Math.random() * 255 )
-    const green = parseInt ( Math.random() * 255 )
-    const blue = parseInt ( Math.random() * 255 )
-    const newColor = `rgb(${red}, ${green}, ${blue})`; 
-
-    document.body.style.backgroundColor = newColor; 
-
+    newProduct.push(titleValue, sizeValue, colorValue, priceValue)
+    products.push(newProduct)
+    cartEl.innerHTML = ""; 
+    for (let index = 0; index < products.length; index++) {
+        const element = products[index];
+        cartEl.innerHTML += `<li>
+            <h3>${element[0]}</h3>
+            <h3>${element[1]}</h3>
+            <h3>${element[2]}</h3>
+            <h3>${element[3]}</h3>
+        </li>`
+        
+    }
+    console.log(newProduct)
 }
